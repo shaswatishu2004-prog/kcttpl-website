@@ -1,0 +1,12 @@
+{
+  "name": "kcttpl-website",
+  "version": "1.0.0",
+  "description": "KCTTPL Website running on Node.js and Express",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "express": "^4.21.2"
+  }
+}

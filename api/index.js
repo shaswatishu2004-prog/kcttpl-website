@@ -10,7 +10,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 // Serve static files from the 'public' directory
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, '../public')));
 
 // Handle the form submission POST request
 app.post('/api/inquire', async (req, res) => {
@@ -63,7 +63,7 @@ You have received a new inquiry from the KCTTPL website:
 
 // Fallback to index.html for root or other routes
 app.get('*', (req, res) => {
-    res.sendFile(path.join(__dirname, 'public', 'index.html'));
+    res.sendFile(path.join(__dirname, '../public', 'index.html'));
 });
 
 // Export the Express API for Vercel

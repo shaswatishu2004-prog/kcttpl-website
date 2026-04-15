@@ -1,3 +1,4 @@
+require('dotenv').config(); // Load variables from .env locally
 const express = require('express');
 const path = require('path');
 const nodemailer = require('nodemailer');
@@ -12,8 +13,8 @@ app.use(express.json());
 // Serve static files from the 'public' directory
 app.use(express.static(path.join(__dirname, '../public')));
 
-// Handle the form submission POST request
-app.post('/api/inquire', async (req, res) => {
+// Handle the form submission POST request dynamically to survive Vercel path rewrites
+app.post('*', async (req, res) => {
     const { name_contact, company_industry, pincode, tonnage, delivery_preference } = req.body;
 
     // Configure the email transport using Gmail
